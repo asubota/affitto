@@ -1,9 +1,15 @@
-nav
+nav.navbar.navbar-inverse(role="navigation")
+  .navbar-header
+    button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#aff-navbar")
+      span.sr-only Toggle navigation
+      .icon-bar
+      .icon-bar
+      .icon-bar
+    a.navbar-brand(ui-sref="aff") Affitto
 
-  ul.nav.nav-justified.nav-pills
-
-    li(ui-sref-active="active")
-      a(ui-sref="aff.table", title="Table") Table
-
-    li(ui-sref-active="active")
-      a(ui-sref="aff.graph", title="Graph") Graph
+  #aff-navbar.collapse.navbar-collapse
+    ul.nav.navbar-nav.navbar-right
+      li(ui-sref-active="active")
+        a(ui-sref="aff.table", title="Table") Table
+      li(ui-sref-active="active")
+        a(ui-sref="aff.graph", title="Graph") Graph
