@@ -1,1 +1,12 @@
 .aff-table-wrap
+  table.table.table-striped.table-hover
+    tr
+      th ID
+      th month
+      th year
+      th total
+    tr(ng-repeat="item in vm.data")
+      td: span {{item.id}}
+      td: span {{item.month}}
+      td: span {{item.year}}
+      td: span {{item.total}}
