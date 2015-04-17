@@ -1,0 +1,17 @@
+@import "_variables";
+
+.aff-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footerHeight;
+  background-color: #f5f5f5;
+
+  .aff-copyright {
+    margin: 20px 0;
+    display: inline-block;
+    color: #6e6e6e;
+    font-size: 14px;
+    font-weight: normal;
+  }
+}

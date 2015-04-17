@@ -1,0 +1,12 @@
+@import "_variables";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: $footerHeight;
+  font-family: monospace;
+  margin-top: 10px;
+}
