@@ -1,1 +1,11 @@
 .aff-graph-wrap
+  nvd3-line-chart(
+    data="vm.exampleData"
+    showXAxis="true"
+    showYAxis="true"
+    tooltips="true"
+    interactive="true"
+    useInteractiveGuideLine="true"
+    color="vm.colorFunction()"
+    xAxisTickFormat="vm.xAxisTickFormatFunction()"
+  )

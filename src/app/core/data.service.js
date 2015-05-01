@@ -56,6 +56,16 @@
             {amount: 4,   price: 15,    type: 'hotWater',    title: 'Hot Water'},
             {amount: 98,  price: 0.322, type: 'electricity', title: 'Electricity'}
           ]
+        },
+        {
+          id: 5,
+          month: 'may',
+          year: 2014,
+          values: [
+            {amount: 4,   price: 5.7,   type: 'coldWater',   title: 'Cold Water'},
+            {amount: 7,   price: 16,    type: 'hotWater',    title: 'Hot Water'},
+            {amount: 115, price: 0.322, type: 'electricity', title: 'Electricity'}
+          ]
         }
       ];
 
