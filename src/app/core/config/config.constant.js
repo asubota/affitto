@@ -3,7 +3,7 @@
 
   angular
     .module('app.core')
-    .constant('API', '/api/v1');
+    .constant('API', 'https://scorching-heat-2725.firebaseio.com/');
 
   ////////////////////////////////////////
 

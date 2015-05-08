@@ -3,12 +3,12 @@ form.form-horizontal
   .form-group
     label.col-sm-2.control-label Year
     .col-sm-10
-      input.form-control(placeholder="Year")
+      input.form-control(placeholder="Year" ng-model="vm.year")
 
   .form-group
     label.col-sm-2.control-label Month
     .col-sm-10
-      input.form-control(placeholder="Month")
+      input.form-control(placeholder="Month" ng-model="vm.month")
 
   .btn-group.pull-right
     button.btn.btn-success(type="button" ng-click="vm.save()")
