@@ -38,7 +38,7 @@
     }
 
     function get() {
-      return storage;
+      return storage.$loaded();
     }
   }
 

@@ -17,8 +17,12 @@
           }
         },
         resolve: {
-          data: ['dataService', function(dataService) {
-            return dataService.get();
+          data: ['dataService', '$q', function(dataService, $q) {
+            var deferred = $q.defer();
+
+            dataService.get().then(deferred.resolve);
+
+            return deferred.promise;
           }]
         }
       });
