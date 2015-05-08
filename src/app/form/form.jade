@@ -1,0 +1,17 @@
+form.form-horizontal
+
+  .form-group
+    label.col-sm-2.control-label Year
+    .col-sm-10
+      input.form-control(placeholder="Year")
+
+  .form-group
+    label.col-sm-2.control-label Month
+    .col-sm-10
+      input.form-control(placeholder="Month")
+
+  .btn-group.pull-right
+    button.btn.btn-success(type="button" ng-click="vm.save()")
+      span.glyphicon.glyphicon-ok
+    button.btn.btn-danger(type="button" ui-sref="aff.table")
+      span.glyphicon.glyphicon-remove

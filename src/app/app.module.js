@@ -7,7 +7,8 @@
     'app.layout',
 
     'app.graph',
-    'app.table'
+    'app.table',
+    'app.form'
   ]);
 
 })();

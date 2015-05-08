@@ -6,7 +6,11 @@
       th year
       th total
     tr(ng-repeat="item in vm.data")
-      td: span {{item.id}}
-      td: span {{item.month}}
-      td: span {{item.year}}
-      td: span {{item.total}}
+      td: span(ng-bind="item.id")
+      td: span(ng-bind="item.month")
+      td: span(ng-bind="item.year")
+      td: span(ng-bind="item.total")
+
+  button.btn.btn-info.btn-block(type="button" ui-sref="aff.form")
+    span.glyphicon.glyphicon-plus
+
