@@ -1,17 +1,55 @@
-form.form-horizontal
+.aff-form-wrap: form.form-horizontal
 
   .form-group
-    label.col-sm-2.control-label Year
-    .col-sm-10
+    label.col-xs-2.control-label Year
+    .col-xs-10
       input.form-control(placeholder="Year" ng-model="vm.item.year")
 
   .form-group
-    label.col-sm-2.control-label Month
-    .col-sm-10
+    label.col-xs-2.control-label Month
+    .col-xs-10
       input.form-control(placeholder="Month" ng-model="vm.item.month")
+
+  .form-group
+    label.col-xs-2.form-control-static.aff-yellow Electricity
+    .col-sm-5.col-xs-10
+      .input-group
+        .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-yellow
+        input.form-control(placeholder="Amount" ng-model="vm.item.amount")
+    .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
+      .input-group
+        input.form-control(placeholder="Price" ng-model="vm.item.price")
+        .input-group-addon.aff-yellow UAH
+
+  .form-group
+    label.col-xs-2.form-control-static.aff-blue Cold Water
+    .col-sm-5.col-xs-10
+      .input-group
+        .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-blue
+        input.form-control(placeholder="Amount" ng-model="vm.item.amount")
+    .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
+      .input-group
+        input.form-control(placeholder="Price" ng-model="vm.item.price")
+        .input-group-addon.aff-blue UAH
+
+  .form-group
+    label.col-xs-2.form-control-static.aff-red Hot Water
+    .col-sm-5.col-xs-10
+      .input-group
+        .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-red
+        input.form-control(placeholder="Amount" ng-model="vm.item.amount")
+    .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
+      .input-group
+        input.form-control(placeholder="Price" ng-model="vm.item.price")
+        .input-group-addon.aff-red UAH
 
   .btn-group.pull-right
     button.btn.btn-success(type="button" ng-click="vm.save()")
       span.glyphicon.glyphicon-ok
     button.btn.btn-danger(type="button" ui-sref="aff.table")
       span.glyphicon.glyphicon-remove
+
+  .clearfix
+
+
+
