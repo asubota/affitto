@@ -3,13 +3,14 @@
 
   angular
     .module('app.form')
-    .controller('Form', Form);
+    .controller('FormAdd', FormAdd);
 
   /* @ngInject */
-  function Form($state, dataService) {
+  function FormAdd($state, dataService) {
     var vm = this;
 
     vm.save = save;
+    vm.item = {};
 
     activate();
 
@@ -20,13 +21,7 @@
     }
 
     function save() {
-      var action = true ? 'add' : 'save';
-      var data = {
-        year: vm.year,
-        month: vm.month
-      };
-
-      dataService[action](data).then(success, fail);
+      dataService.add(vm.item).then(success, fail);
 
       function success() {
         $state.go('aff.table');

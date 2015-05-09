@@ -8,13 +8,27 @@
   /* @ngInject */
   function Configure($stateProvider) {
     $stateProvider
-      .state('aff.form', {
+      .state('aff.add', {
         url:'form',
         views: {
           content: {
             templateUrl: 'app/form/form.html',
-            controller: 'Form as vm'
+            controller: 'FormAdd as vm'
           }
+        }
+      })
+      .state('aff.edit', {
+        url:'form/:id',
+        views: {
+          content: {
+            templateUrl: 'app/form/form.html',
+            controller: 'FormEdit as vm'
+          }
+        },
+        resolve: {
+          item: ['dataService', '$stateParams', function(dataService, $stateParams) {
+            return dataService.getRecord($stateParams.id);
+          }]
         }
       });
   }

@@ -1,16 +1,17 @@
 .aff-table-wrap
   table.table.table-striped.table-hover
     tr
-      th ID
       th month
       th year
       th total
+      th
+
     tr(ng-repeat="item in vm.data")
-      td: span(ng-bind="item.id")
       td: span(ng-bind="item.month")
       td: span(ng-bind="item.year")
       td: span(ng-bind="item.total")
+      td: span.glyphicon.glyphicon-edit.aff-edit(ui-sref="aff.edit({id: item.$id})")
 
-  button.btn.btn-info.btn-block(type="button" ui-sref="aff.form")
+  button.btn.btn-info.btn-block(type="button" ui-sref="aff.add")
     span.glyphicon.glyphicon-plus
 
