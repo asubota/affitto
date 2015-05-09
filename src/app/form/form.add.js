@@ -12,6 +12,12 @@
     vm.save = save;
     vm.item = {};
 
+    vm.item.values = [
+      {type: 'electricity'},
+      {type: 'coldWater'},
+      {type: 'hotWater'}
+    ];
+
     activate();
 
     ////////////////////////////////////////

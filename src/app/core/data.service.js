@@ -22,7 +22,9 @@
     ////////////////////////////////////////
 
     function getRecord(index) {
-      return storage.$getRecord(index);
+      return storage.$loaded().then(function() {
+        return storage.$getRecord(index);
+      });
     }
 
     function add(item) {

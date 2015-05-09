@@ -15,10 +15,10 @@
     .col-sm-5.col-xs-10
       .input-group
         .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-yellow
-        input.form-control(placeholder="Amount" ng-model="vm.item.amount")
+        input.form-control(placeholder="Amount" ng-model="vm.item.values[0].amount")
     .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
       .input-group
-        input.form-control(placeholder="Price" ng-model="vm.item.price")
+        input.form-control(placeholder="Price" ng-model="vm.item.values[0].price")
         .input-group-addon.aff-yellow UAH
 
   .form-group
@@ -26,10 +26,10 @@
     .col-sm-5.col-xs-10
       .input-group
         .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-blue
-        input.form-control(placeholder="Amount" ng-model="vm.item.amount")
+        input.form-control(placeholder="Amount" ng-model="vm.item.values[1].amount")
     .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
       .input-group
-        input.form-control(placeholder="Price" ng-model="vm.item.price")
+        input.form-control(placeholder="Price" ng-model="vm.item.values[1].price")
         .input-group-addon.aff-blue UAH
 
   .form-group
@@ -37,10 +37,10 @@
     .col-sm-5.col-xs-10
       .input-group
         .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-red
-        input.form-control(placeholder="Amount" ng-model="vm.item.amount")
+        input.form-control(placeholder="Amount" ng-model="vm.item.values[2].amount")
     .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
       .input-group
-        input.form-control(placeholder="Price" ng-model="vm.item.price")
+        input.form-control(placeholder="Price" ng-model="vm.item.values[2].price")
         .input-group-addon.aff-red UAH
 
   .btn-group.pull-right
@@ -50,6 +50,4 @@
       span.glyphicon.glyphicon-remove
 
   .clearfix
-
-
 
