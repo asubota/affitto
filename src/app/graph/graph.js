@@ -9,58 +9,60 @@
   function Graph(data) {
     var vm = this;
 
-    vm.data = data;
+    vm.data            = data;
+    vm.xAxisTickFormat = xAxisTickFormat;
+    vm.getColor        = getColor;
+    vm.graphData       = []
 
     activate();
 
-    var getData = function(type) {
+    ////////////////////////////////////////
+
+    function activate() {
+      vm.graphData = [{
+        key: 'Hot water',
+        area: false,
+        values: getData('hotWater')
+      }, {
+        key: 'Cold water',
+        area: false,
+        values: getData('coldWater')
+      }, {
+        key: 'Electricity',
+        area: false,
+        values: getData('electricity')
+      }];
+    }
+
+    function getData(type) {
       var result = [];
+      var id = 1;
 
       vm.data.forEach(function(item) {
         var dataItem = item.values.filter(function(item) {
           return item.type === type;
         })[0], value = (dataItem.price*dataItem.amount).toFixed(4);
 
-        result.push([item.id, value]);
+        result.push([id++, value]);
       });
 
       return result;
-    };
+    }
 
-    vm.xAxisTickFormatFunction = function() {
+    function xAxisTickFormat() {
       return function(index) {
         return vm.data[index-1].month;
       };
-    };
+    }
 
-    vm.exampleData = [{
-      key: 'Hot water',
-      area: false,
-      values: getData('hotWater')
-    }, {
-      key: 'Cold water',
-      area: false,
-      values: getData('coldWater')
-    }, {
-      key: 'Electricity',
-      area: false,
-      values: getData('electricity')
-    }];
-
-    vm.colorFunction = function() {
+    function getColor() {
       return function(data, index) {
         switch (index) {
           case 0: return 'red';
           case 1: return 'green';
-          case 2: return 'yellow';
+          case 2: return '#EDA509';
         }
       };
-    };
-
-    ////////////////////////////////////////
-
-    function activate() {
-
     }
   }
 
