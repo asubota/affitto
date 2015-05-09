@@ -1,12 +1,14 @@
 .aff-table-wrap
   table.table.table-striped.table-hover(ng-if="vm.data.length")
     tr
+      th ID
       th month
       th year
       th total
       th
 
     tr(ng-repeat="item in vm.data")
+      th: span(ng-bind="$index + 1")
       td: span(ng-bind="item.month")
       td: span(ng-bind="item.year")
       td: span(ng-bind="item.total")

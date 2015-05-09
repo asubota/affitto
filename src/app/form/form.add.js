@@ -10,12 +10,12 @@
     var vm = this;
 
     vm.save = save;
-    vm.item = {};
+    vm.item = {year: 2015};
 
     vm.item.values = [
-      {type: 'electricity'},
-      {type: 'coldWater'},
-      {type: 'hotWater'}
+      {type: 'electricity', price: 0.3222},
+      {type: 'coldWater', price: 7.46},
+      {type: 'hotWater', price: 28.67}
     ];
 
     activate();

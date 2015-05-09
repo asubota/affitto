@@ -17,7 +17,7 @@
 
     function activate() {
       vm.data.forEach(function(item) {
-        item.total = calculateTotal(item.values || []);
+        item.total = calculateTotal(item.values).toFixed(4);
       });
 
       function calculateTotal(data) {
