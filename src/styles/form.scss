@@ -1,0 +1,28 @@
+@import "_variables";
+
+.aff-form-wrap {
+
+  .form-control-static {
+    text-align: right;
+  }
+
+  .aff-red {
+    color: $red;
+  }
+
+  .aff-blue {
+    color: $blue;
+  }
+
+  .aff-yellow {
+    color: $yellow;
+  }
+
+
+  @media (max-width: 767px) {
+    .aff-form-last {
+      margin-top: 10px;
+    }
+  }
+
+}
