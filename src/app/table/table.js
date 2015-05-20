@@ -6,7 +6,7 @@
     .controller('Table', Table);
 
   /* @ngInject */
-  function Table(data) {
+  function Table(data, calcService) {
     var vm = this;
 
     vm.data = data;
@@ -17,15 +17,8 @@
 
     function activate() {
       vm.data.forEach(function(item) {
-        item.total = calculateTotal(item.values).toFixed(4);
+        item.total = calcService.calculateTotal(item.values);
       });
-
-      function calculateTotal(data) {
-        return data.reduce(function(value, item) {
-          return value + item.amount * item.price;
-        }, 0);
-      }
-
     }
   }
 

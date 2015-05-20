@@ -6,64 +6,60 @@
     .controller('Graph', Graph);
 
   /* @ngInject */
-  function Graph(data) {
+  function Graph(data, calcService, PRECISION) {
     var vm = this;
 
-    vm.data            = data;
-    vm.xAxisTickFormat = xAxisTickFormat;
-    vm.getColor        = getColor;
-    vm.graphData       = []
+    vm.data   = getGraphData(data);
+    vm.series = getSeries(data);
+    vm.labels = getLabels(data);
 
     activate();
 
     ////////////////////////////////////////
 
     function activate() {
-      vm.graphData = [{
-        key: 'Hot water',
-        area: false,
-        values: getData('hotWater')
-      }, {
-        key: 'Cold water',
-        area: false,
-        values: getData('coldWater')
-      }, {
-        key: 'Electricity',
-        area: false,
-        values: getData('electricity')
-      }];
+
     }
 
     function getData(type) {
       var result = [];
-      var id = 1;
 
-      vm.data.forEach(function(item) {
-        var dataItem = item.values.filter(function(item) {
-          return item.type === type;
-        })[0], value = (dataItem.price*dataItem.amount).toFixed(4);
+      if (type === 'total') {
+        return data.map(function(item) {
+          return calcService.calculateTotal(item.values);
+        });
+      }
 
-        result.push([id++, value]);
+      return _.chain(data)
+        .pluck('values')
+        .map(function(values) {
+          return _.filter(values, {type: type})[0];
+        })
+        .map(function(item) {
+          return (item.amount * item.price).toFixed(PRECISION);
+        })
+        .value();
+     }
+
+    function getGraphData() {
+      return [
+        getData('total'),
+        getData('coldWater'),
+        getData('hotWater'),
+        getData('electricity')
+      ];
+    }
+
+    function getLabels() {
+      return data.map(function(item) {
+        return [item.month, item.year].join(',');
       });
-
-      return result;
     }
 
-    function xAxisTickFormat() {
-      return function(index) {
-        return vm.data[index-1].month;
-      };
+    function getSeries() {
+      return ['Total', 'Cold Water', 'Hot Water', 'Electricity'];
     }
 
-    function getColor() {
-      return function(data, index) {
-        switch (index) {
-          case 0: return 'red';
-          case 1: return 'green';
-          case 2: return '#EDA509';
-        }
-      };
-    }
   }
 
 })();
