@@ -9,9 +9,15 @@
   function Graph(data, calcService, PRECISION) {
     var vm = this;
 
-    vm.data   = getGraphData(data);
-    vm.series = getSeries(data);
-    vm.labels = getLabels(data);
+    vm.type   = 'line';
+    vm.toggle = toggle;
+
+    vm.lineData   = getLineData(data);
+    vm.lineSeries = getSeries(data);
+    vm.lineLabels = getLabels(data);
+
+    vm.pieData    = getPieData(data);
+    vm.pieLabels  = ['Cold Water', 'Hot Water', 'Electricity'];
 
     activate();
 
@@ -21,9 +27,11 @@
 
     }
 
-    function getData(type) {
-      var result = [];
+    function toggle() {
+      vm.type = vm.type === 'line' ? 'pie' : 'line';
+    }
 
+    function getData(type) {
       if (type === 'total') {
         return data.map(function(item) {
           return calcService.calculateTotal(item.values);
@@ -41,7 +49,7 @@
         .value();
      }
 
-    function getGraphData() {
+    function getLineData() {
       return [
         getData('total'),
         getData('coldWater'),
@@ -50,9 +58,18 @@
       ];
     }
 
+    function getPieData() {
+      var calc = function(sum, val) { return sum + parseFloat(val); };
+      return [
+        getData('electricity').reduce(calc, 0).toFixed(PRECISION),
+        getData('coldWater').reduce(calc, 0).toFixed(PRECISION),
+        getData('hotWater').reduce(calc, 0).toFixed(PRECISION),
+      ];
+    }
+
     function getLabels() {
       return data.map(function(item) {
-        return [item.month, item.year].join(',');
+        return [item.month, item.year].join(', ');
       });
     }
 

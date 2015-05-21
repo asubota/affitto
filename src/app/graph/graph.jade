@@ -1,8 +1,19 @@
 .aff-graph-wrap
-  canvas.chart.chart-line(
-    data="vm.data"
-    labels="vm.labels"
-    series="vm.series"
-    legend="true"
-    click="vm.onClick"
-  )
+  div(ng-show="vm.type=='line'")
+    .well Over time
+    canvas.chart.chart-line(
+      data="vm.lineData"
+      labels="vm.lineLabels"
+      series="vm.lineSeries"
+      legend="true"
+    )
+
+  div(ng-show="vm.type=='pie'")
+    .well Total
+    canvas.chart.chart-pie(
+      data="vm.pieData"
+      labels="vm.pieLabels"
+      legend="true"
+    )
+
+  button.btn.btn-primary(type="button" ng-click="vm.toggle()") Toggle
