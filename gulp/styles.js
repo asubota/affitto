@@ -3,12 +3,25 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 
-var $ = require('gulp-load-plugins')();
+var $ = require('gulp-load-plugins')({
+  pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
+});
 
 var wiredep = require('wiredep').stream;
 
 module.exports = function(options) {
-  gulp.task('styles', function () {
+
+  gulp.task('bootstrap', function () {
+    return gulp.src($.mainBowerFiles())
+      .pipe($.filter(function(file) {
+        return /bootstrap\-sass\-official\/assets\/stylesheets\/bootstrap/.test(file.path);
+      }))
+      .pipe($.concat('bootstrap.scss'))
+      .pipe($.sass())
+      .pipe(gulp.dest(options.tmp + '/serve/bootstrap/'));
+  });
+
+  gulp.task('styles', ['bootstrap'], function () {
     var sassOptions = {
       style: 'expanded'
     };
