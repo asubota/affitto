@@ -21,28 +21,36 @@
     "angularfire": "~1.0.0"
   },
   "overrides": {
+    "angular-strap": {
+      "main": [],
+      "dependencies": {
+        "angular": "^1.2.21",
+        "angular-motion": "^0.3.3"
+      }
+    },
+    "Chart.js": {
+      "main": [
+        "src/Chart.Core.js",
+        "src/Chart.Line.js",
+        "src/Chart.Doughnut.js"
+      ]
+    },
     "bootstrap-sass-official": {
       "main": [
-        "assets/javascripts/bootstrap/collapse.js",
-        "assets/javascripts/bootstrap/transition.js",
         "assets/stylesheets/bootstrap/_variables.scss",
         "assets/stylesheets/bootstrap/_mixins.scss",
         "assets/stylesheets/bootstrap/_normalize.scss",
         "assets/stylesheets/bootstrap/_scaffolding.scss",
         "assets/stylesheets/bootstrap/_grid.scss",
+        "assets/stylesheets/bootstrap/_tables.scss",
         "assets/stylesheets/bootstrap/_forms.scss",
-        "assets/stylesheets/bootstrap/_input-groups.scss",
         "assets/stylesheets/bootstrap/_buttons.scss",
         "assets/stylesheets/bootstrap/_navs.scss",
         "assets/stylesheets/bootstrap/_navbar.scss",
-        "assets/stylesheets/bootstrap/_wells.scss",
-        "assets/stylesheets/bootstrap/_modals.scss",
-        "assets/stylesheets/bootstrap/_close.scss",
-        "assets/stylesheets/bootstrap/_tables.scss",
-        "assets/stylesheets/bootstrap/_progress-bars.scss",
-        "assets/stylesheets/bootstrap/_component-animations.scss",
-        "assets/stylesheets/bootstrap/_responsive-utilities.scss",
-        "assets/stylesheets/bootstrap/_utilities.scss"
+        "assets/stylesheets/bootstrap/_input-groups.scss",
+        "assets/stylesheets/bootstrap/_button-groups.scss",
+        "assets/stylesheets/bootstrap/_utilities.scss",
+        "assets/stylesheets/bootstrap/_wells.scss"
       ]
     }
   }

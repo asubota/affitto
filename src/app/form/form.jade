@@ -14,7 +14,7 @@
     label.col-xs-2.form-control-static.aff-yellow Electricity
     .col-sm-5.col-xs-10
       .input-group
-        .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-yellow
+        .input-group-addon: i.icon-lightbulb.aff-yellow
         input.form-control(placeholder="Amount" ng-model="vm.item.values[0].amount")
     .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
       .input-group
@@ -25,7 +25,7 @@
     label.col-xs-2.form-control-static.aff-blue Cold Water
     .col-sm-5.col-xs-10
       .input-group
-        .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-blue
+        .input-group-addon: i.icon-water.aff-blue
         input.form-control(placeholder="Amount" ng-model="vm.item.values[1].amount")
     .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
       .input-group
@@ -36,7 +36,7 @@
     label.col-xs-2.form-control-static.aff-red Hot Water
     .col-sm-5.col-xs-10
       .input-group
-        .input-group-addon: i.glyphicon.glyphicon-asterisk.aff-red
+        .input-group-addon: i.icon-water.aff-red
         input.form-control(placeholder="Amount" ng-model="vm.item.values[2].amount")
     .col-xs-offset-2.col-sm-offset-0.col-sm-5.col-xs-10.aff-form-last
       .input-group
@@ -45,8 +45,8 @@
 
   .btn-group.pull-right
     button.btn.btn-success(type="button" ng-click="vm.save()")
-      span.glyphicon.glyphicon-ok
+      span.icon-glyph
     button.btn.btn-danger(type="button" ui-sref="aff.table")
-      span.glyphicon.glyphicon-remove
+      span.icon-glyph-1
 
   .clearfix

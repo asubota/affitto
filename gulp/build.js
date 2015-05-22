@@ -46,7 +46,7 @@ module.exports = function(options) {
       .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', options.errorHandler('Uglify'))
       .pipe(jsFilter.restore())
       .pipe(cssFilter)
-      .pipe($.replace('../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/', '../fonts/'))
+      // .pipe($.replace('../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/', '../fonts/'))
       .pipe($.csso())
       .pipe(cssFilter.restore())
       .pipe(assets.restore())
@@ -65,8 +65,8 @@ module.exports = function(options) {
   });
 
   gulp.task('fonts', function () {
-    return gulp.src(options.src + '/fonts/*')
-      .pipe(gulp.dest(options.dist + '/fonts'));
+    return gulp.src(options.src + '/font/*')
+      .pipe(gulp.dest(options.dist + '/font'));
   });
 
   gulp.task('clean', function (done) {

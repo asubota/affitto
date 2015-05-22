@@ -18,6 +18,9 @@
     color: $yellow;
   }
 
+  .btn {
+    outline: none;
+  }
 
   @media (max-width: 767px) {
     .aff-form-last {

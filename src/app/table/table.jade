@@ -12,8 +12,8 @@
       td: span(ng-bind="item.month")
       td: span(ng-bind="item.year")
       td: span(ng-bind="item.total")
-      td: span.glyphicon.glyphicon-edit.aff-edit(ui-sref="aff.edit({id: item.$id})")
+      td: span.icon-edit.aff-edit(ui-sref="aff.edit({id: item.$id})")
 
   button.btn.btn-info.btn-block(type="button" ui-sref="aff.add")
-    span.glyphicon.glyphicon-plus
+    span.icon-plus-squared
 
