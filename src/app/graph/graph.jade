@@ -1,6 +1,6 @@
 .aff-graph-wrap
   div(ng-show="vm.type=='line'")
-    .well Over time
+    .well over time
     canvas.chart.chart-line(
       data="vm.lineData"
       labels="vm.lineLabels"
@@ -9,11 +9,13 @@
     )
 
   div(ng-show="vm.type=='pie'")
-    .well Total
+    .well total
     canvas.chart.chart-pie(
       data="vm.pieData"
       labels="vm.pieLabels"
       legend="true"
     )
 
-  button.btn.btn-primary(type="button" ng-click="vm.toggle()") Toggle
+  .text-center
+    button.btn.btn-info(type="button" ng-click="vm.toggle()")
+      span.icon-arrows-cw

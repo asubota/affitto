@@ -37,10 +37,13 @@
     },
     "bootstrap-sass-official": {
       "main": [
+        "assets/javascripts/bootstrap/collapse.js",
+        "assets/javascripts/bootstrap/transition.js",
         "assets/stylesheets/bootstrap/_variables.scss",
         "assets/stylesheets/bootstrap/_mixins.scss",
         "assets/stylesheets/bootstrap/_normalize.scss",
         "assets/stylesheets/bootstrap/_scaffolding.scss",
+        "assets/stylesheets/bootstrap/_type.scss",
         "assets/stylesheets/bootstrap/_grid.scss",
         "assets/stylesheets/bootstrap/_tables.scss",
         "assets/stylesheets/bootstrap/_forms.scss",
@@ -50,6 +53,8 @@
         "assets/stylesheets/bootstrap/_input-groups.scss",
         "assets/stylesheets/bootstrap/_button-groups.scss",
         "assets/stylesheets/bootstrap/_utilities.scss",
+        "assets/stylesheets/bootstrap/_component-animations.scss",
+        "assets/stylesheets/bootstrap/_responsive-utilities.scss",
         "assets/stylesheets/bootstrap/_wells.scss"
       ]
     }

@@ -6,7 +6,7 @@
     .controller('Graph', Graph);
 
   /* @ngInject */
-  function Graph(data, calcService, PRECISION) {
+  function Graph(data, calcService, PRECISION, _) {
     var vm = this;
 
     vm.type   = 'line';

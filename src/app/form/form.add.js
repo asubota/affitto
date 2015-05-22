@@ -27,7 +27,9 @@
     }
 
     function save() {
-      dataService.add(vm.item).then(success, fail);
+      if (vm.item.year && vm.item.month) {
+        dataService.add(vm.item).then(success, fail);
+      }
 
       function success() {
         $state.go('aff.table');
