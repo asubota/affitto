@@ -11,6 +11,7 @@
 
     vm.type   = 'line';
     vm.toggle = toggle;
+    vm.toggleTotal = toggleTotal;
 
     vm.lineData   = getLineData(data);
     vm.lineSeries = getSeries(data);
@@ -25,6 +26,14 @@
 
     function activate() {
 
+    }
+
+    function toggleTotal() {
+      if (vm.lineData.length === 4) {
+        vm.totalData = vm.lineData.pop();
+      } else {
+        vm.lineData.push(vm.totalData);
+      }
     }
 
     function toggle() {
@@ -51,10 +60,10 @@
 
     function getLineData() {
       return [
-        getData('total'),
         getData('hotWater'),
         getData('coldWater'),
-        getData('electricity')
+        getData('electricity'),
+        getData('total'),
       ];
     }
 
@@ -74,7 +83,7 @@
     }
 
     function getSeries() {
-      return ['Total', 'Hot Water', 'Cold Water', 'Electricity'];
+      return ['Hot Water', 'Cold Water', 'Electricity', 'Total'];
     }
 
   }

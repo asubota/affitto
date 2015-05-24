@@ -19,3 +19,6 @@
   .text-center
     button.btn.btn-info(type="button" ng-click="vm.toggle()")
       span.icon-arrows-cw
+
+    button.btn.btn-info(type="button" ng-click="vm.toggleTotal()" ng-if="vm.type == 'line'")
+      | show total
