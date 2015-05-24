@@ -9,4 +9,8 @@ body {
   margin-bottom: $footerHeight;
   font-family: monospace;
   margin-top: 10px;
+
+  .btn:focus, .btn:active:focus {
+    outline: none;
+  }
 }

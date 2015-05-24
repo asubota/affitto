@@ -17,7 +17,7 @@
     vm.lineLabels = getLabels(data);
 
     vm.pieData    = getPieData(data);
-    vm.pieLabels  = ['Cold Water', 'Hot Water', 'Electricity'];
+    vm.pieLabels  = ['Hot Water', 'Cold Water', 'Electricity'];
 
     activate();
 
@@ -52,8 +52,8 @@
     function getLineData() {
       return [
         getData('total'),
-        getData('coldWater'),
         getData('hotWater'),
+        getData('coldWater'),
         getData('electricity')
       ];
     }
@@ -61,9 +61,9 @@
     function getPieData() {
       var calc = function(sum, val) { return sum + parseFloat(val); };
       return [
-        getData('electricity').reduce(calc, 0).toFixed(PRECISION),
-        getData('coldWater').reduce(calc, 0).toFixed(PRECISION),
         getData('hotWater').reduce(calc, 0).toFixed(PRECISION),
+        getData('coldWater').reduce(calc, 0).toFixed(PRECISION),
+        getData('electricity').reduce(calc, 0).toFixed(PRECISION)
       ];
     }
 
@@ -74,7 +74,7 @@
     }
 
     function getSeries() {
-      return ['Total', 'Cold Water', 'Hot Water', 'Electricity'];
+      return ['Total', 'Hot Water', 'Cold Water', 'Electricity'];
     }
 
   }
