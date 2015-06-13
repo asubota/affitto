@@ -13,4 +13,25 @@ body {
   .btn:focus, .btn:active:focus {
     outline: none;
   }
+
+
+  .btn {
+    transition: background-color 0.3s;
+  }
+
+  .aff-header a {
+    transition: color 0.3s;
+  }
+
+  .table tr {
+    transition: background-color 0.3s;
+  }
+
+  [class^="icon-"], [class*=" icon-"] {
+    &:hover:before {
+      transform: scale(1.4);
+      transition: transform 0.3s;
+    }
+  }
+
 }
