@@ -14,24 +14,22 @@ body {
     outline: none;
   }
 
+  .aff-content {
+    user-select: none;
+  }
 
-  .btn {
+  .btn, .table tr {
     transition: background-color 0.3s;
+
+    &:hover [class^="icon-"], [class*=" icon-"] {
+      &:before {
+        transform: scale(1.4);
+        transition: transform 0.3s;
+      }
+    }
   }
 
   .aff-header a {
     transition: color 0.3s;
   }
-
-  .table tr {
-    transition: background-color 0.3s;
-  }
-
-  [class^="icon-"], [class*=" icon-"] {
-    &:hover:before {
-      transform: scale(1.4);
-      transition: transform 0.3s;
-    }
-  }
-
 }

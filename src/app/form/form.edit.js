@@ -10,9 +10,10 @@
     var vm = this;
 
     vm.save = save;
-    vm.item = item;
     vm.years  = formService.getYears();
     vm.months = formService.getMonths();
+
+    vm.item = item;
 
     activate();
 

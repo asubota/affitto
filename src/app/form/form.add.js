@@ -8,9 +8,16 @@
   /* @ngInject */
   function FormAdd($state, dataService, formService) {
     var vm = this;
+    var currentDate = new Date();
 
     vm.save = save;
-    vm.item = {year: 2015};
+    vm.years  = formService.getYears();
+    vm.months = formService.getMonths();
+
+    vm.item = {
+      year: currentDate.getFullYear(),
+      month: vm.months[currentDate.getMonth()]
+    };
 
     vm.item.values = [
       {type: 'electricity', price: 0.3222},
