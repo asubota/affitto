@@ -6,7 +6,7 @@
     .controller('FormAdd', FormAdd);
 
   /* @ngInject */
-  function FormAdd($state, dataService) {
+  function FormAdd($state, dataService, formService) {
     var vm = this;
 
     vm.save = save;

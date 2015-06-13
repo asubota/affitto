@@ -3,12 +3,12 @@
   .form-group
     label.col-xs-2.control-label Year
     .col-xs-10
-      input.form-control(placeholder="Year" ng-model="vm.item.year")
+      select.form-control(ng-model="vm.item.year" ng-options="year for year in vm.years")
 
   .form-group
     label.col-xs-2.control-label Month
     .col-xs-10
-      input.form-control(placeholder="Month" ng-model="vm.item.month")
+      select.form-control(ng-model="vm.item.month" ng-options="month for month in vm.months")
 
   .form-group
     label.col-xs-2.form-control-static.aff-yellow Electricity

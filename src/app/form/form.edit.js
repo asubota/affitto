@@ -6,11 +6,13 @@
     .controller('FormEdit', FormEdit);
 
   /* @ngInject */
-  function FormEdit($state, dataService, item) {
+  function FormEdit($state, dataService, item, formService) {
     var vm = this;
 
     vm.save = save;
     vm.item = item;
+    vm.years  = formService.getYears();
+    vm.months = formService.getMonths();
 
     activate();
 
