@@ -3,7 +3,7 @@
 
   angular
     .module('app.core')
-    .constant('API', 'https://scorching-heat-2725.firebaseio.com/')
+    .constant('API', 'https://scorching-heat-2725.firebaseio.com/affitto')
     .constant('PRECISION', 2);
 
   ////////////////////////////////////////

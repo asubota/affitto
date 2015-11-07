@@ -10,6 +10,10 @@ body {
   font-family: monospace;
   margin-top: 10px;
 
+  .aff-content {
+    padding-bottom: 15px;
+  }
+
   .btn:focus, .btn:active:focus {
     outline: none;
   }

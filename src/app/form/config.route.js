@@ -15,6 +15,11 @@
             templateUrl: 'app/form/form.html',
             controller: 'FormAdd as vm'
           }
+        },
+        resolve: {
+          last: ['dataService', function(dataService) {
+            return dataService.getLast();
+          }]
         }
       })
       .state('aff.edit', {

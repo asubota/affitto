@@ -2,6 +2,7 @@
   'use strict';
 
   angular.module('app', [
+    'production',
     'app.core',
     'app.widgets',
     'app.layout',
@@ -12,4 +13,3 @@
   ]);
 
 })();
-

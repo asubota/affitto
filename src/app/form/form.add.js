@@ -6,7 +6,7 @@
     .controller('FormAdd', FormAdd);
 
   /* @ngInject */
-  function FormAdd($state, dataService, formService) {
+  function FormAdd($state, dataService, formService, last) {
     var vm = this;
     var currentDate = new Date();
 
@@ -20,9 +20,9 @@
     };
 
     vm.item.values = [
-      {type: 'electricity', price: 0.3222},
-      {type: 'coldWater', price: 7.46},
-      {type: 'hotWater', price: 28.67}
+      {type: 'electricity', price: last.electricity},
+      {type: 'coldWater', price: last.coldWater},
+      {type: 'hotWater', price: last.hotWater}
     ];
 
     activate();
