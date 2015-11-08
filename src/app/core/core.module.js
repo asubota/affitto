@@ -3,7 +3,8 @@
 
   angular.module('app.core', [
     'ui.router',
-    'firebase'
+    'firebase',
+    'ngAnimate'
   ]);
 
 })();
