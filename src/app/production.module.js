@@ -16,7 +16,7 @@
 
   /* @ngInject */
   function exceptionHandlerDecorator($delegate, $log) {
-    $delegate = function(excpetion, couse) {
+    $delegate = function(excpetion) {
       // $log.log();
     };
 

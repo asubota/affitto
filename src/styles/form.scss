@@ -1,6 +1,19 @@
 @import "_variables";
 
 .aff-form-wrap {
+  .total-line {
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .total-title {
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .total-value {
+    display: inline-block;
+  }
 
   .form-control-static {
     text-align: right;

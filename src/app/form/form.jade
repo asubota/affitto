@@ -43,6 +43,12 @@
         input.form-control(placeholder="Price" ng-model="vm.item.values[2].price")
         .input-group-addon.aff-red UAH
 
+  .form-group
+    .col-xs-offset-2.col-sm-offset-2.col-sm-10.col-xs-10
+      .bg-success.total-line
+        .total-title Total:
+        .total-value(ng-bind="vm.getTotal()")
+
   .btn-group.pull-right
     button.btn.btn-success(type="button" ng-click="vm.save()")
       span.icon-glyph

@@ -11,6 +11,7 @@
     var currentDate = new Date();
 
     vm.save = save;
+    vm.getTotal = getTotal;
     vm.years  = formService.getYears();
     vm.months = formService.getMonths();
 
@@ -31,6 +32,10 @@
 
     function activate() {
 
+    }
+
+    function getTotal() {
+      return formService.getTotal(vm.item.values);
     }
 
     function save() {

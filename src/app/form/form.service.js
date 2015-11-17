@@ -9,7 +9,8 @@
   function FormService() {
     var factory = {
       getYears: getYears,
-      getMonths: getMonths
+      getMonths: getMonths,
+      getTotal: getTotal
     };
 
     return factory;
@@ -24,7 +25,11 @@
       return  ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     }
 
-
+    function getTotal(data) {
+      return data.reduce(function(sum, item) {
+        return sum + parseFloat(item.price, 10) * parseFloat(item.amount, 10);
+      }, 0).toFixed(2);
+    }
 
   }
 
